@@ -63,7 +63,10 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yelee
+theme: jacman
+stylus:
+#压缩样式
+  compress: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
