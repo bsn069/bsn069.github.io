@@ -1,22 +1,19 @@
 language: node_js
 node_js:
-- "6"  # nodejs的版本
+- "stable"  # nodejs的版本
 branches:
   only:
   - hexo  # 设置自动化部署的源码分支
-env:
-  global:
-    secure: fxBE17yzFhC2+FjwVLYbgIhggyfliv3dFCDozTJD7U3n...
+cache:
+  directories:
+    - node_modules
 before_install:
 - export TZ='Asia/Shanghai'  # 设置时区
-- npm install -g hexo
-- npm install -g hexo-cli
-before_script:
 # 设置github账户信息
-- git config --global user.name "bsn1" #设置github用户名
+- git config --global user.name "bsn_travis" #设置github用户名
 - git config --global user.email 513026809@qq.com #设置github用户邮箱
-# github仓库操作
-- sed -i'' "s~git@github.com:SeayXu/seayxu.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/SeayXu/seayxu.github.io.git~" _config.yml
+#- npm install -g hexo
+- npm install -g hexo-cli
 # 安装依赖组件
 install:
 - npm install
@@ -26,4 +23,8 @@ script:
 - hexo generate
 # 执行的成功后执行 
 after_success:
-- hexo deploy
+- cd ./public
+- git init
+- git add --all .
+- git commit -m "travis ci auto builder"
+- git push --quiet --force https://$REPO_TOKEN@$GH_REF master
