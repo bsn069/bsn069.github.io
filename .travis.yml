@@ -27,4 +27,8 @@ after_success:
 - git init
 - git add --all .
 - git commit -m "travis ci auto builder"
-- git push --quiet --force https://$REPO_TOKEN@$GH_REF master
+
+# github
+- git push --quiet --force https://$github_tokenN@github.com/$github_user/$github_user.github.io.git master
+# gitcafe coding.net
+- git push --quiet --force https://$gitcafe_user:$gitcafe_pwd@git.coding.net/$gitcafe_user/$gitcafe_user.git master
