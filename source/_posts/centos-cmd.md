@@ -30,3 +30,5 @@ centos cmd
 1. mv CentOS-Base.repo CentOS-Base.repo.bak
 3. mv CentOS6-Base-163.repo CentOS-Base.repo
 3. yum makecache 
+
+
