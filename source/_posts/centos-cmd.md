@@ -2,8 +2,9 @@
 title: centos cmd
 tags:
   - centos
-categories:
   - linux
+categories:
+  - centos
 date: 2017-05-29 21:13:57
 ---
 centos cmd
@@ -24,11 +25,12 @@ centos cmd
 ##  cat /proc/version
 	Linux version 2.6.32-358.el6.x86_64 (mockbuild@c6b8.bsys.dev.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC) ) #1 SMP Fri Feb 22 00:31:26 UTC 2013
 
-# CentOS 6.4 国内最快的YUM源163安装
-1. 进入目录/etc/yum.repos.d
-2. wget http://mirrors.163.com/.help/CentOS6-Base-163.repo
-1. mv CentOS-Base.repo CentOS-Base.repo.bak
-3. mv CentOS6-Base-163.repo CentOS-Base.repo
-3. yum makecache 
+# systemctl
+## systemctl start docker.service
+## systemctl stop docker.service
+## systemctl restart docker.service
+## systemctl enable docker.service
 
-
+# 关闭selinux
+1. setenforce 0
+2. sed -i '/^SELINUX=/c\SELINUX=disabled' /etc/selinux/config
