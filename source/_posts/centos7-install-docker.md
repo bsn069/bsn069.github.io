@@ -21,6 +21,7 @@ date: 2017-05-29 22:15:59
 7. 设置刀云镜像
 	1. curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://48b042ae.m.daocloud.io
 	2. 生成 /etc/docker/daemon.json
+5. systemctl restart docker
 6. docker run hello-world
 8. systemctl enable docker.service
 

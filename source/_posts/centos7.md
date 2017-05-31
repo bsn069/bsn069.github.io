@@ -18,6 +18,7 @@ date: 2017-05-29 22:03:35
 
 # CentOS 6.4 国内最快的YUM源163安装
 1. cd /etc/yum.repos.d
+2. yum install wget
 2. 
 	1. wget http://mirrors.163.com/.help/CentOS6-Base-163.repo
 1. mv CentOS-Base.repo CentOS-Base.repo.bak
